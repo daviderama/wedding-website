@@ -51,5 +51,30 @@ document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
   alert('Grazie per aver confermato la tua presenza!')
 })
 
+// Add mobile menu toggle functionality
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('nav')) {
+    menuToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+  }
+});
+
 // Your JavaScript code here
 console.log('Wedding website loaded!') 
