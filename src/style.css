@@ -466,7 +466,7 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -489,7 +489,12 @@ footer {
 
 .landing-image {
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 0;
+  padding: 0 1rem;
+  flex: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .landing-image img {
@@ -504,6 +509,13 @@ footer {
   z-index: 1;
   padding: 2rem;
   color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
 }
 
 .language-content h1 {
@@ -515,16 +527,17 @@ footer {
 .language-buttons {
   margin-top: 2rem;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
+  padding-bottom: 2rem;
 }
 
 .lang-btn {
   background: transparent;
   border: 2px solid #7E846B;
   color: #7E846B;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s;
   font-family: var(--font-main);
@@ -538,18 +551,42 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .landing-image {
-    max-width: 90%;
-    margin: 0 auto 1.5rem;
+  .language-content {
+    padding: 2rem 1rem;
   }
 
-  .language-content h1 {
-    font-size: 2.5rem;
+  .landing-image {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 0;
+    flex: 0.8;
   }
   
+  .language-buttons {
+    margin: 3rem 0;
+    gap: 2rem;
+  }
+
   .lang-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 380px) {
+  .landing-image {
+    max-width: 90%;
+    flex: 0.7;
+  }
+
+  .language-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lang-btn {
+    width: 200px;
   }
 }
 
