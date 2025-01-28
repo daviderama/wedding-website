@@ -1,15 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Wedding</title>
+    <title>Davide & Francesca - 13.09.2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
-    <div id="app">
-      <h1>Our Wedding</h1>
-      <p>Welcome to our special day!</p>
-    </div>
-    <script type="module" src="/src/main.js"></script>
+    <nav>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#benvenuti">Benvenuti</a></li>
+        <li><a href="#programma">Programma</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#regalo">Regalo</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+    
+    <main>
+      <header>
+        <h1>Davide & Francesca</h1>
+        <p class="date">13 Settembre 2025</p>
+        <p id="countdown" class="countdown"></p>
+      </header>
+
+      <section id="benvenuti">
+        <h2>Benvenuti!</h2>
+        <p>Care invitate e cari invitati, vi diamo il benvenuto in questa pagina. Abbiamo pensato di creare questo spazio per darvi alcune informazioni utili e raccogliere le esigenze di tutti.</p>
+      </section>
+
+      <section id="programma">
+        <h2>Una giornata insieme</h2>
+        <div class="timeline">
+          <div class="event">
+            <h3>Ore 11:30: Arrivo</h3>
+            <p>Vi aspettiamo a Villa Lattuada a Casatenovo. Un aperitivo e del buon vino vi faranno da benvenuto.</p>
+          </div>
+          
+          <div class="event">
+            <h3>Ore 12:30: Cerimonia</h3>
+            <p>La cerimonia si terrà nel parco della villa.</p>
+          </div>
+
+          <div class="event">
+            <h3>Dalle ore 13:00: Pranzo</h3>
+            <p>Gusteremo insieme un pranzo preparato con cura, con attenzione alle intolleranze e preferenze alimentari.</p>
+          </div>
+
+          <div class="event">
+            <h3>Dalle ore 17:30: Taglio torta</h3>
+            <p>Festeggeremo insieme con il taglio della torta e i saluti finali.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="location">
+        <h2>Location</h2>
+        <div class="location-info">
+          <h3>Villa Lattuada</h3>
+          <p>Via Giuseppe Parini, 23880 Casatenovo LC</p>
+          <div id="map"></div>
+          <div class="directions">
+            <h4>Come Arrivare</h4>
+            <p>La villa è facilmente raggiungibile in auto. Ampio parcheggio disponibile in loco.</p>
+            <a href="https://maps.app.goo.gl/TsDFzZnAa3zMDw5P9" target="_blank" class="button">Apri in Google Maps</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="regalo">
+        <h2>Lista Nozze</h2>
+        <p>Il vostro affetto e la vostra presenza sono il regalo più grande. Se desiderate comunque farci un regalo, potete contribuire al nostro viaggio di nozze:</p>
+        <div class="gift-info">
+          <p><strong>IBAN:</strong> IT00X0000000000000000000000</p>
+          <p><strong>Intestato a:</strong> Davide e Francesca</p>
+          <p><strong>Causale:</strong> Regalo di nozze</p>
+        </div>
+      </section>
+
+      <section id="rsvp">
+        <h2>RSVP</h2>
+        <p>Vi preghiamo di confermare la vostra presenza entro il 13 Agosto 2025</p>
+        <form id="rsvpForm" class="rsvp-form">
+          <div class="form-group">
+            <label for="name">Nome e Cognome</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="guests">Numero di persone</label>
+            <input type="number" id="guests" name="guests" min="1" max="5" required>
+          </div>
+          <div class="form-group">
+            <label for="dietary">Intolleranze o preferenze alimentari</label>
+            <textarea id="dietary" name="dietary"></textarea>
+          </div>
+          <button type="submit" class="button">Conferma presenza</button>
+        </form>
+      </section>
+
+      <section id="contatti">
+        <h2>Contatti</h2>
+        <div class="contacts">
+          <div class="contact">
+            <h3>Davide</h3>
+            <p>Tel: +39 XXX XXX XXXX</p>
+          </div>
+          <div class="contact">
+            <h3>Francesca</h3>
+            <p>Tel: +39 XXX XXX XXXX</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Davide & Francesca - 13.09.2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="src/main.js"></script>
   </body>
 </html> 
