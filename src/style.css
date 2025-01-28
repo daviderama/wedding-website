@@ -282,4 +282,118 @@ footer {
   .rsvp-form {
     padding: 0 1rem;
   }
+}
+
+/* Add at the beginning of your CSS file */
+.hidden {
+  display: none;
+}
+
+/* Language selector styles */
+.language-selector {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../images/landing-page.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 9999; /* Make sure it's on top */
+}
+
+.language-selector.hidden {
+  display: none;
+}
+
+.main-content {
+  display: none;
+}
+
+.main-content.visible {
+  display: block;
+}
+
+.language-selector::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.language-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  color: white;
+}
+
+.language-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.language-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Playfair Display', serif;
+}
+
+.lang-btn:hover {
+  background: white;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .language-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .lang-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Add transition styles */
+.language-selector {
+  transition: opacity 0.5s ease-out;
+}
+
+.main-content {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.5s ease-in;
+}
+
+.main-content.visible {
+  opacity: 1;
+  display: block;
+}
+
+.language-selector.hidden {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
 } 
