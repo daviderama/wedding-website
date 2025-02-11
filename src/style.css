@@ -12,6 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'PlayfairDisplay-Italic';
+  src: url('../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 :root {
   --primary-color: #7E846B;
   --primary-light: rgba(126, 132, 107, 0.1);
@@ -36,13 +43,43 @@ body {
   letter-spacing: 0.3px;
 }
 
+/* Common styles for both landing and main page headers */
 h1 {
-  font-size: 5rem;
-  letter-spacing: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+/* Remove duplicate styles and use a common class for both headers */
+h1 .name,
+.landing-text h1 .name {
+  font-family: 'PlayfairDisplay-Italic', serif;
+  font-size: 5rem;
   color: var(--primary-color);
-  font-weight: 500;
-  line-height: 1.2;
+  letter-spacing: 4px;
+  font-weight: 200;
+  margin: 1.5rem 0;
+}
+
+h1 .ampersand,
+.landing-text h1 .ampersand {
+  font-family: var(--font-main);
+  font-size: 3.5rem;
+  color: var(--accent-color);
+  line-height: 1;
+  font-weight: 300;
+  margin: 0.5rem 0 -0.5rem 0;
+}
+
+.date,
+.landing-text .date {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin: 2rem 0;
+  letter-spacing: 2px;
 }
 
 h2 {
@@ -78,18 +115,8 @@ h3 {
 /* Header and Navigation */
 header {
   text-align: center;
-  padding: 8rem 0;
-  margin-bottom: 4rem;
+  padding: 4rem 0;
   position: relative;
-}
-
-.date {
-  font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-  margin: 2rem 0;
-  font-style: italic;
-  color: var(--accent-color);
 }
 
 .countdown {
@@ -206,7 +233,6 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  position: relative;
 }
 
 nav ul {
@@ -235,6 +261,7 @@ main {
   margin: var(--spacing) auto;
   padding: var(--spacing);
   background-color: white;
+  padding-top: 0;
 }
 
 h1, h2, h3, h4, p, label, .date, .countdown {
@@ -425,8 +452,12 @@ footer {
     background-color: var(--secondary-color);
   }
 
-  h1 {
+  h1 .name {
     font-size: 3.5rem;
+  }
+  
+  h1 .ampersand {
+    font-size: 3rem;
   }
 
   h2 {
@@ -502,18 +533,43 @@ footer {
   align-items: center;
 }
 
-.landing-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.landing-text {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 4rem 0;
 }
 
-.landing-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.landing-text h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  line-height: 1;
+}
+
+.landing-text h1 .name {
+  font-family: 'PlayfairDisplay-Italic', serif;
+  font-size: 5rem;
+  color: var(--primary-color);
+  letter-spacing: 4px;
+  font-weight: 200;
+  margin: 1.5rem 0;
+}
+
+.landing-text h1 .ampersand {
+  font-family: var(--font-main);
+  font-size: 3.5rem;
+  color: var(--accent-color);
+  line-height: 1;
+  font-weight: 300;
+  margin: 0.5rem 0 -0.5rem 0;
+}
+
+.landing-text .date {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin: 2rem 0;
+  letter-spacing: 2px;
 }
 
 .language-content h1 {
@@ -553,13 +609,14 @@ footer {
     padding: 2rem 1rem;
   }
 
-  .landing-image {
-    max-width: 85%;
-    margin: 0 auto;
-    padding: 0;
-    flex: 0.8;
+  .landing-text h1 {
+    font-size: 3.5rem;
   }
-  
+
+  .landing-text .date {
+    font-size: 2rem;
+  }
+
   .language-buttons {
     margin: 3rem 0;
     gap: 2rem;
@@ -573,9 +630,20 @@ footer {
 
 /* For very small screens */
 @media (max-width: 380px) {
-  .landing-image {
-    max-width: 90%;
-    flex: 0.7;
+  h1 .name {
+    font-size: 3rem;
+  }
+  
+  h1 .ampersand {
+    font-size: 2.5rem;
+  }
+
+  .landing-text h1 {
+    font-size: 3rem;
+  }
+
+  .landing-text .date {
+    font-size: 1.8rem;
   }
 
   .language-buttons {
@@ -613,7 +681,6 @@ footer {
 /* Enhance typography */
 .date {
   font-size: 1.8rem;
-  font-style: italic;
   opacity: 0.9;
 }
 
@@ -636,4 +703,20 @@ footer {
 .event:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(126, 132, 107, 0.2);
+}
+
+/* Also update the landing page ampersand if needed */
+.landing-text h1 .ampersand {
+  font-family: var(--font-main);
+  font-size: 3.5rem;
+  color: var(--accent-color);
+  line-height: 1;
+  font-weight: 300;
+  margin: 0.5rem 0 -0.5rem 0;
+}
+
+/* Also update the landing page names */
+.landing-text h1 .name {
+  font-family: 'PlayfairDisplay-Italic', serif;
+  margin: 1.5rem 0;
 } 
