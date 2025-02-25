@@ -74,12 +74,40 @@ h1 .ampersand,
   margin: 0.5rem 0 -0.5rem 0;
 }
 
+/* Common date styles for both landing and main page */
 .date,
 .landing-text .date {
   font-size: 2.5rem;
   color: var(--accent-color);
   margin: 2rem 0;
   letter-spacing: 2px;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+/* Common line styles for both landing and main page */
+.date::before,
+.date::after,
+.landing-text .date::before,
+.landing-text .date::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1.5px;
+  background-color: var(--accent-color);
+  opacity: 0.5;
+}
+
+.date::before,
+.landing-text .date::before {
+  top: 11px;
+}
+
+.date::after,
+.landing-text .date::after {
+  bottom: -3px;
 }
 
 h2 {
@@ -719,4 +747,19 @@ footer {
 .landing-text h1 .name {
   font-family: 'PlayfairDisplay-Italic', serif;
   margin: 1.5rem 0;
-} 
+}
+
+/* Update landing page date line styles to match main page */
+.landing-text .date::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2.5px;
+  background-color: var(--accent-color);
+  opacity: 0.5;
+  top: 11px;
+}
+
+/* Keep the bottom line as is since it's already correct */ 
