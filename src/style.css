@@ -191,11 +191,12 @@ header {
 /* Form elements */
 .form-group {
   margin-bottom: 2.5rem;
+  width: 100%;
 }
 
 input,
 textarea {
-  width: 100%;
+  width: calc(100% - 2.4rem); /* Subtract padding (1.2rem * 2) */
   padding: 1.2rem;
   border: 1px solid var(--primary-light);
   border-radius: 8px;
@@ -376,18 +377,32 @@ section:last-of-type {
 
 /* RSVP form styles */
 .rsvp-form {
+  padding: 1rem 1rem;
   max-width: 500px;
   margin: 0 auto;
-  text-align: center;
+  margin-bottom: 1px;
+  text-align: left;
   background-color: var(--secondary-color);
-  padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+/* Add more space between text and form */
+#rsvp p {
+  margin-bottom: 3rem;
+}
+
+/* Ensure form inputs don't exceed form width */
+.form-group {
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+/* Keep submit button centered */
 .button[type="submit"] {
   display: block;
   margin: 0 auto;
+  margin-top: 3rem;
 }
 
 label {
@@ -543,7 +558,6 @@ footer {
   }
   
   .rsvp-form {
-    padding: 0 1rem;
   }
 }
 
@@ -830,4 +844,14 @@ p {
 /* Or if you prefer targeting the p before the button */
 .location-info p + .button {
   margin-top: 2rem;
+}
+
+/* Add new styles for the submit button form-group */
+.rsvp-form .form-group:last-child {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.rsvp-form .form-group:last-child .button {
+  margin-top: 1rem;
 } 
