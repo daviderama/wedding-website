@@ -542,6 +542,8 @@ footer {
 
   body {
     font-size: 1.1rem;
+    background: url('../images/bg_mobile.png') no-repeat center center fixed;
+    background-size: cover;
   }
 
   .date {
