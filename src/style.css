@@ -298,11 +298,22 @@ h1, h2, h3, h4, p, label, .countdown {
   text-shadow: none;
 }
 
+/* Update section spacing */
 section {
-  margin: 4rem 0;
+  margin: 10rem 0; /* Increase space between sections to 8rem */
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Remove margin from first section */
+section:first-of-type {
+  margin-top: 0;
+}
+
+/* Remove margin from last section */
+section:last-of-type {
+  margin-bottom: 0;
 }
 
 @keyframes fadeInUp {
