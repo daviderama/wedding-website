@@ -775,4 +775,15 @@ p {
   margin-left: auto;
   margin-right: auto;
   max-width: 800px; /* Optional: to prevent very wide paragraphs */
+}
+
+/* Add space before map button */
+.location-info .button {
+  margin-top: 2rem; /* Add space above the button */
+  display: inline-block;
+}
+
+/* Or if you prefer targeting the p before the button */
+.location-info p + .button {
+  margin-top: 2rem;
 } 
