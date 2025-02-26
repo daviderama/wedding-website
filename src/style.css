@@ -756,20 +756,39 @@ footer {
 }
 
 @media (max-width: 480px) {
+  /* Remove grey nav background */
+  nav {
+    background-color: transparent;
+  }
+
+  /* Update leaf sizes and positions */
   .leaf {
-    width: 40vw;
-    min-width: 160px;
-    max-width: 220px;
+    width: 55vw; /* Bigger than previous 40vw */
+    min-width: 200px;
+    max-width: 300px;
   }
   
   .leaf-top-left {
-    top: 35px;
+    top: 0; /* Move to very top */
     left: -30px;
+    transform: rotate(0deg);
   }
   
   .leaf-bottom-right {
-    right: -8px;
+    bottom: 0;
+    right: -12px;
+    transform: rotate(182deg);
   }
+
+  /* Rest of existing 480px styles... */
+  h1 .name {
+    font-size: 3rem;
+  }
+  
+  h1 .ampersand {
+    font-size: 2.5rem;
+  }
+  /* ... */
 }
 
 /* Add this to your CSS */
