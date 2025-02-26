@@ -73,39 +73,36 @@ h1 .ampersand,
   margin: 0.5rem 0 -0.5rem 0;
 }
 
-/* Common date styles for both landing and main page */
-.date,
-.landing-text .date {
+/* Common date styles */
+.date {
   font-size: 2.5rem;
   color: var(--accent-color);
   margin: 2rem 0;
   letter-spacing: 2px;
   position: relative;
   padding: 0.5rem 0;
+  opacity: 0.9;
+  text-align: center;
 }
 
-/* Common line styles for both landing and main page */
+/* Common line styles */
 .date::before,
-.date::after,
-.landing-text .date::before,
-.landing-text .date::after {
+.date::after {
   content: '';
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
-  height: 1.5px;
+  height: 1px;
   background-color: var(--accent-color);
   opacity: 0.5;
 }
 
-.date::before,
-.landing-text .date::before {
+.date::before {
   top: 11px;
 }
 
-.date::after,
-.landing-text .date::after {
+.date::after {
   bottom: -3px;
 }
 
@@ -296,7 +293,7 @@ main {
   padding-top: 0;
 }
 
-h1, h2, h3, h4, p, label, .date, .countdown {
+h1, h2, h3, h4, p, label, .countdown {
   text-shadow: none;
 }
 
@@ -685,64 +682,6 @@ footer {
   pointer-events: none;
   display: none;
 }
-
-/* Enhance typography */
-.date {
-  font-size: 1.8rem;
-  opacity: 0.9;
-}
-
-/* Make timeline events more elegant */
-.timeline {
-  position: relative;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background: var(--primary-color);
-  opacity: 0.3;
-}
-
-.event:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(126, 132, 107, 0.2);
-}
-
-/* Also update the landing page ampersand if needed */
-.landing-text h1 .ampersand {
-  font-family: var(--font-main);
-  font-size: 3.5rem;
-  color: var(--accent-color);
-  line-height: 1;
-  font-weight: 300;
-  margin: 0.5rem 0 -0.5rem 0;
-}
-
-/* Also update the landing page names */
-.landing-text h1 .name {
-  font-family: 'PlayfairDisplay-Italic', serif;
-  margin: 1.5rem 0;
-}
-
-/* Update landing page date line styles to match main page */
-.landing-text .date::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 2.5px;
-  background-color: var(--accent-color);
-  opacity: 0.5;
-  top: 11px;
-}
-
-/* Keep the bottom line as is since it's already correct */
 
 /* Decorative leaves */
 .leaf {
