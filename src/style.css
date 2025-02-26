@@ -38,7 +38,7 @@ h1 .name,
 .landing-text h1 .name {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 5rem;
+  font-size: 4rem;
   color: var(--primary-color);
   font-weight: 200;
   margin: 1.5rem 0;
@@ -610,7 +610,7 @@ footer {
 .landing-text h1 .name {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 5rem;
+  font-size: 4rem;
   color: var(--primary-color);
   font-weight: 200;
   margin: 1.5rem 0;
