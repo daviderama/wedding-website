@@ -50,7 +50,7 @@ h1 .ampersand,
   font-size: 3.5rem;
   color: var(--accent-color);
   line-height: 1;
-  font-weight: 300;
+  font-weight: 350;
   margin: 0.5rem 0 -0.5rem 0;
 }
 
@@ -64,6 +64,7 @@ h1 .ampersand,
   padding: 0.5rem 0;
   opacity: 0.9;
   text-align: center;
+  font-weight: 400;
 }
 
 /* Common line styles */
@@ -620,7 +621,7 @@ footer {
   font-size: 3.5rem;
   color: var(--accent-color);
   line-height: 1;
-  font-weight: 300;
+  font-weight: 350;
   margin: 0.5rem 0 -0.5rem 0;
 }
 
@@ -629,6 +630,7 @@ footer {
   color: var(--accent-color);
   margin: 2rem 0;
   letter-spacing: 2px;
+  font-weight: 400;
 }
 
 .language-content h1 {
