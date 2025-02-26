@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Cormorant';
-  src: url('../fonts/Cormorant-Light.ttf') format('truetype');
+  src: url('/fonts/Cormorant-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Cormorant';
-  src: url('../fonts/Cormorant-Medium.ttf') format('truetype');
+  src: url('/fonts/Cormorant-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'PlayfairDisplay-Italic';
-  src: url('../fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  src: url('/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype-variations');
   font-weight: 100 900;
   font-style: normal;
 }
@@ -248,6 +248,9 @@ textarea:focus {
   border-radius: 0;
   text-decoration: none;
   display: inline-block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .button:hover,
@@ -255,6 +258,24 @@ textarea:focus {
 .button a:hover {
   background: var(--primary-color);
   color: white;
+}
+
+/* Mobile button adjustments */
+@media (max-width: 768px) {
+  .button,
+  .lang-btn,
+  .button a {
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .button[type="submit"] {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 nav {
@@ -704,12 +725,20 @@ footer {
 /* Decorative leaves */
 .leaf {
   position: fixed;
-  width: 25vw; /* 25% of viewport width */
-  min-width: 280px; /* Minimum size */
-  max-width: 400px; /* Maximum size */
+  width: 25vw;
+  min-width: 280px;
+  max-width: 400px;
   height: auto;
   pointer-events: none;
   z-index: 1;
+  display: none; /* Hide by default on mobile */
+}
+
+/* Show leaves only on larger screens */
+@media (min-width: 768px) {
+  .leaf {
+    display: block;
+  }
 }
 
 .leaf-top-left {
@@ -724,7 +753,7 @@ footer {
   transform: rotate(182deg);
 }
 
-/* Tablet adjustments */
+/* Remove or update these since they're not working well on mobile */
 @media (max-width: 1024px) {
   .leaf {
     width: 30vw;
@@ -733,7 +762,6 @@ footer {
   }
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
   .leaf {
     width: 35vw;
@@ -751,7 +779,6 @@ footer {
   }
 }
 
-/* Small mobile adjustments */
 @media (max-width: 480px) {
   .leaf {
     width: 40vw;
