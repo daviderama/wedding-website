@@ -760,4 +760,72 @@ footer {
   top: 11px;
 }
 
-/* Keep the bottom line as is since it's already correct */ 
+/* Keep the bottom line as is since it's already correct */
+
+/* Decorative leaves */
+.leaf {
+  position: fixed;
+  width: 25vw; /* 25% of viewport width */
+  min-width: 280px; /* Minimum size */
+  max-width: 400px; /* Maximum size */
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.leaf-top-left {
+  top: 65px;
+  left: -56px;
+  transform: rotate(0deg);
+}
+
+.leaf-bottom-right {
+  bottom: 0px;
+  right: -15px;
+  transform: rotate(182deg);
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  .leaf {
+    width: 30vw;
+    min-width: 240px;
+    max-width: 320px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .leaf {
+    width: 35vw;
+    min-width: 200px;
+    max-width: 280px;
+  }
+  
+  .leaf-top-left {
+    top: 45px;
+    left: -40px;
+  }
+  
+  .leaf-bottom-right {
+    right: -10px;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .leaf {
+    width: 40vw;
+    min-width: 160px;
+    max-width: 220px;
+  }
+  
+  .leaf-top-left {
+    top: 35px;
+    left: -30px;
+  }
+  
+  .leaf-bottom-right {
+    right: -8px;
+  }
+} 
