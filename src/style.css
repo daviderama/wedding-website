@@ -459,7 +459,10 @@ footer {
     position: fixed;
     right: 1rem;
     top: 1rem;
-    z-index: 100;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    padding: 1rem;
   }
 
   .nav-links {
@@ -468,10 +471,10 @@ footer {
     top: 0;
     right: 0;
     width: 250px;
-    height: auto;
+    height: 100vh; /* Full height */
     background-color: white;
     padding: 4rem 1rem 1rem;
-    z-index: 90;
+    z-index: 990;
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
   }
 
@@ -480,11 +483,6 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-  }
-
-  nav ul {
-    margin: 0;
-    padding: 0;
   }
 
   nav li {
@@ -716,13 +714,23 @@ footer {
   height: auto;
   pointer-events: none;
   z-index: 1;
-  display: none; /* Hide by default on mobile */
 }
 
-/* Show leaves only on larger screens */
-@media (min-width: 768px) {
+/* Update mobile styles for leaves */
+@media (max-width: 768px) {
   .leaf {
-    display: block;
+    width: 35vw;
+    min-width: 200px;
+    max-width: 280px;
+  }
+  
+  .leaf-top-left {
+    top: 45px;
+    left: -40px;
+  }
+  
+  .leaf-bottom-right {
+    right: -10px;
   }
 }
 
@@ -744,23 +752,6 @@ footer {
     width: 30vw;
     min-width: 240px;
     max-width: 320px;
-  }
-}
-
-@media (max-width: 768px) {
-  .leaf {
-    width: 35vw;
-    min-width: 200px;
-    max-width: 280px;
-  }
-  
-  .leaf-top-left {
-    top: 45px;
-    left: -40px;
-  }
-  
-  .leaf-bottom-right {
-    right: -10px;
   }
 }
 
