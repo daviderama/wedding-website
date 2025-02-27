@@ -856,4 +856,59 @@ p {
 
 .rsvp-form .form-group:last-child .button {
   margin-top: 1rem;
+}
+
+/* Hide leaves on main content */
+.main-content .leaf {
+  display: none;
+}
+
+/* Show leaves on language selector (landing page) */
+.language-selector .leaf {
+  position: fixed;
+  width: 25vw;
+  min-width: 280px;
+  max-width: 400px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  display: block;
+}
+
+/* Update mobile styles for landing page leaves */
+@media (max-width: 768px) {
+  .language-selector .leaf {
+    width: 35vw;
+    min-width: 200px;
+    max-width: 280px;
+  }
+  
+  .language-selector .leaf-top-left {
+    top: 45px;
+    left: -40px;
+  }
+  
+  .language-selector .leaf-bottom-right {
+    right: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-selector .leaf {
+    width: 55vw;
+    min-width: 200px;
+    max-width: 300px;
+  }
+  
+  .language-selector .leaf-top-left {
+    top: 0;
+    left: -30px;
+    transform: rotate(0deg);
+  }
+  
+  .language-selector .leaf-bottom-right {
+    bottom: 0;
+    right: -12px;
+    transform: rotate(182deg);
+  }
 } 
