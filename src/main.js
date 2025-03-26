@@ -297,4 +297,30 @@ function updateContent(lang) {
 function resetLanguage() {
   localStorage.removeItem('selectedLanguage');
   window.location.reload();
-} 
+}
+
+// Add menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  
+  menuToggle.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+    
+    // Optional: Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInside = navLinks.contains(event.target) || menuToggle.contains(event.target);
+      if (!isClickInside && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  });
+  
+  // Close menu when clicking a link
+  const links = document.querySelectorAll('.nav-links a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+}); 

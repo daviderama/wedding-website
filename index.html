@@ -2,19 +2,24 @@
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Davide & Francesca - 13.09.2025</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="src/style.css">
   </head>
   <body>
     <div id="language-selector" class="language-selector">
       <div class="language-content">
-        <div class="landing-image">
-          <img src="images/landing-page.png" alt="Davide & Francesca">
+        <div class="landing-text">
+          <h1>
+            <span class="name">Davide</span>
+            <span class="ampersand">&</span>
+            <span class="name">Francesca</span>
+          </h1>
+          <p class="date">13.09.2025</p>
         </div>
         <div class="language-buttons">
           <button onclick="selectLanguage('it')" class="lang-btn">Italiano</button>
@@ -24,6 +29,10 @@
     </div>
 
     <div id="main-content" class="main-content">
+      <!-- Decorative leaves -->
+      <img src="images/leaf.png" alt="" class="leaf leaf-top-left">
+      <img src="images/leaf.png" alt="" class="leaf leaf-bottom-right">
+      
       <nav>
         <button class="menu-toggle" aria-label="Toggle menu">
           <span class="hamburger"></span>
@@ -40,8 +49,12 @@
       
       <main>
         <header>
-          <h1>Davide & Francesca</h1>
-          <p class="date">13 Settembre 2025</p>
+          <h1>
+            <span class="name">Davide</span>
+            <span class="ampersand">&</span>
+            <span class="name">Francesca</span>
+          </h1>
+          <p class="date">13.09.2025</p>
           <p id="countdown" class="countdown"></p>
         </header>
 
@@ -121,7 +134,9 @@
               <label for="dietary">Intolleranze o preferenze alimentari</label>
               <textarea id="dietary" name="dietary"></textarea>
             </div>
-            <button type="submit" class="button">Conferma presenza</button>
+            <div class="form-group">
+              <button type="submit" class="button">Conferma presenza</button>
+            </div>
           </form>
         </section>
 
