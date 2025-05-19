@@ -1,32 +1,32 @@
 // Initialize language handling first
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM Content Loaded');
-  
-  // First, clear any existing language selection (for testing)
-  localStorage.removeItem('selectedLanguage');
-  
-  const selectedLang = localStorage.getItem('selectedLanguage');
-  const languageSelector = document.getElementById('language-selector');
-  const mainContent = document.getElementById('main-content');
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM Content Loaded");
 
-  console.log('Selected Language:', selectedLang);
-  console.log('Language Selector Element:', languageSelector);
-  console.log('Main Content Element:', mainContent);
+  // First, clear any existing language selection (for testing)
+  localStorage.removeItem("selectedLanguage");
+
+  const selectedLang = localStorage.getItem("selectedLanguage");
+  const languageSelector = document.getElementById("language-selector");
+  const mainContent = document.getElementById("main-content");
+
+  console.log("Selected Language:", selectedLang);
+  console.log("Language Selector Element:", languageSelector);
+  console.log("Main Content Element:", mainContent);
 
   if (selectedLang) {
     // If language is already selected, show main content
-    languageSelector.classList.add('hidden');
-    mainContent.style.display = 'block';
-    mainContent.classList.add('visible');
+    languageSelector.classList.add("hidden");
+    mainContent.style.display = "block";
+    mainContent.classList.add("visible");
     updateContent(selectedLang);
     initializeMainContent(selectedLang);
   } else {
     // If no language is selected, show language selector
-    console.log('No language selected, showing selector');
-    languageSelector.classList.remove('hidden');
-    languageSelector.style.display = 'block';
-    mainContent.style.display = 'none';
-    mainContent.classList.remove('visible');
+    console.log("No language selected, showing selector");
+    languageSelector.classList.remove("hidden");
+    languageSelector.style.display = "block";
+    mainContent.style.display = "none";
+    mainContent.classList.remove("visible");
   }
 });
 
@@ -36,14 +36,14 @@ function initializeMainContent(lang) {
   setInterval(() => updateCountdown(lang), 1000 * 60);
 
   // Initialize map
-  const map = L.map('map').setView([45.71664, 9.31826], 15);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
+  const map = L.map("map").setView([45.71664, 9.31826], 15);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors",
   }).addTo(map);
 
   L.marker([45.71664, 9.31826])
     .addTo(map)
-    .bindPopup('Villa Lattuada')
+    .bindPopup("Villa Lattuada")
     .openPopup();
 
   // Initialize other event listeners
@@ -52,87 +52,90 @@ function initializeMainContent(lang) {
 
 function initializeEventListeners() {
   // Add smooth scrolling
-  document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll("nav a").forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const section = document.querySelector(this.getAttribute('href'));
-      section.scrollIntoView({ behavior: 'smooth' });
+      const section = document.querySelector(this.getAttribute("href"));
+      section.scrollIntoView({ behavior: "smooth" });
     });
   });
 
   // RSVP form handling
-  document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
+  document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
-    console.log('RSVP Data:', data);
-    alert('Grazie per aver confermato la tua presenza!');
+    console.log("RSVP Data:", data);
+    alert("Grazie per aver confermato la tua presenza!");
   });
 
   // Mobile menu handling
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-  menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navLinks.classList.toggle("active");
   });
 
   // Close menu when clicking a link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      menuToggle.classList.remove('active');
-      navLinks.classList.remove('active');
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuToggle.classList.remove("active");
+      navLinks.classList.remove("active");
     });
   });
 
   // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('nav')) {
-      menuToggle.classList.remove('active');
-      navLinks.classList.remove('active');
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("nav")) {
+      menuToggle.classList.remove("active");
+      navLinks.classList.remove("active");
     }
   });
 }
 
 // Add date countdown
-const weddingDate = new Date('2025-09-13T11:30:00')
+const weddingDate = new Date("2025-09-13T11:30:00");
 function updateCountdown(lang) {
-  const now = new Date()
-  const difference = weddingDate - now
-  
+  const now = new Date();
+  const difference = weddingDate - now;
+
   if (difference > 0) {
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24))
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    
-    const countdownElement = document.getElementById('countdown')
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+
+    const countdownElement = document.getElementById("countdown");
     if (countdownElement) {
-      const message = lang === 'it' 
-        ? `Mancano ${days} giorni e ${hours} ore al nostro matrimonio!`
-        : `${days} days and ${hours} hours until our wedding!`;
+      const message =
+        lang === "it"
+          ? `Mancano ${days} giorni e ${hours} ore al nostro matrimonio!`
+          : `${days} days and ${hours} hours until our wedding!`;
       countdownElement.textContent = message;
     }
   }
 }
 
 // Your JavaScript code here
-console.log('Wedding website loaded!')
+console.log("Wedding website loaded!");
 
 // Move the selectLanguage function to the top level
-window.selectLanguage = function(lang) {
-  console.log('Language selected:', lang);
-  localStorage.setItem('selectedLanguage', lang);
-  
-  const languageSelector = document.getElementById('language-selector');
-  const mainContent = document.getElementById('main-content');
-  
+window.selectLanguage = function (lang) {
+  console.log("Language selected:", lang);
+  localStorage.setItem("selectedLanguage", lang);
+
+  const languageSelector = document.getElementById("language-selector");
+  const mainContent = document.getElementById("main-content");
+
   // Start transition
-  languageSelector.classList.add('hidden');
-  mainContent.style.display = 'block';
-  
+  languageSelector.classList.add("hidden");
+  mainContent.style.display = "block";
+
   // Wait for fade out to complete before showing main content
   setTimeout(() => {
-    mainContent.classList.add('visible');
+    mainContent.classList.add("visible");
     updateContent(lang);
     initializeMainContent(lang);
   }, 500);
@@ -143,151 +146,209 @@ function updateContent(lang) {
   const translations = {
     it: {
       // Navigation
-      benvenuti: 'Benvenuti',
-      programma: 'Programma',
-      location: 'Location',
-      regalo: 'Regalo',
-      rsvp: 'RSVP',
-      contatti: 'Contatti',
+      benvenuti: "Benvenuti",
+      programma: "Programma",
+      location: "Location",
+      regalo: "Regalo",
+      rsvp: "RSVP",
+      contatti: "Contatti",
 
       // Welcome section
-      welcome_title: 'Benvenuti!',
-      welcome_text: 'Care invitate e cari invitati, vi diamo il benvenuto in questa pagina. Abbiamo pensato di creare questo spazio per darvi alcune informazioni utili e raccogliere le esigenze di tutti.',
+      welcome_title: "Benvenuti!",
+      welcome_text:
+        "Care invitate e cari invitati, vi diamo il benvenuto in questa pagina. Abbiamo pensato di creare questo spazio per darvi alcune informazioni utili e raccogliere le esigenze di tutti.",
 
       // Schedule section
-      schedule_title: 'Una giornata insieme',
-      arrival_time: 'Ore 11:30: Arrivo',
-      arrival_text: 'Vi aspettiamo a Villa Lattuada a Casatenovo. Un aperitivo e del buon vino vi faranno da benvenuto.',
-      ceremony_time: 'Ore 12:30: Cerimonia',
-      ceremony_text: 'La cerimonia si terrà nel parco della villa.',
-      lunch_time: 'Dalle ore 13:00: Pranzo',
-      lunch_text: 'Gusteremo insieme un pranzo preparato con cura, con attenzione alle intolleranze e preferenze alimentari.',
-      cake_time: 'Dalle ore 17:30: Taglio torta',
-      cake_text: 'Festeggeremo insieme con il taglio della torta e i saluti finali.',
+      schedule_title: "Una giornata insieme",
+      arrival_time: "Ore 15:30: Arrivo",
+      arrival_text:
+        "Vi aspettiamo a Villa Lattuada a Casatenovo. Potrete parcheggiare comodamente nel parcheggio della villa e godervi i primi momenti in questo splendido luogo.",
+      ceremony_time: "Ore 16:00: Cerimonia",
+      ceremony_text:
+        "La cerimonia si terrà nel parco della villa, circondati dalla natura e dal verde del giardino. Un momento intimo e speciale per celebrare il nostro amore.",
+      aperitivo_time: "Ore 17:00: Aperitivo",
+      aperitivo_text:
+        "Un aperitivo ricco e del buon vino vi faranno da benvenuto. Potrete gustare specialità locali e brindare insieme a noi in un'atmosfera conviviale.",
+      dinner_time: "Ore 19:00: Cena",
+      dinner_text:
+        "Gusteremo insieme una cena raffinata, preparata con ingredienti di prima qualità e con particolare attenzione alle intolleranze e preferenze alimentari di tutti gli ospiti. Un momento di convivialità e buona cucina.",
+      cake_time: "Ore 21:30: Taglio torta",
+      cake_text:
+        "Festeggeremo insieme con il taglio della torta, un dolce speciale preparato con cura per questo giorno importante. Un momento dolce per celebrare il nostro amore.",
+      dance_time: "Ore 22:00: Balli",
+      dance_text:
+        "La festa continua con musica e balli fino a tarda notte. Un'occasione per divertirsi insieme e creare ricordi indimenticabili di questa giornata speciale.",
+      closing_time: "Ore 3:00: Chiusura",
+      closing_text:
+        "Concluderemo i festeggiamenti con un ultimo brindisi e i saluti finali. Grazie per aver condiviso con noi questo giorno così speciale.",
 
       // Location section
-      directions_title: 'Come Arrivare',
-      directions_text: 'La villa è facilmente raggiungibile in auto. Ampio parcheggio disponibile in loco.',
-      maps_button: 'Apri in Google Maps',
+      directions_title: "Come Arrivare",
+      directions_text:
+        "La villa è facilmente raggiungibile in auto. Ampio parcheggio disponibile in loco.",
+      maps_button: "Apri in Google Maps",
 
       // Gift section
-      gift_title: 'Lista Nozze',
-      gift_text: 'Il vostro affetto e la vostra presenza sono il regalo più grande. Se desiderate comunque farci un regalo, potete contribuire al nostro viaggio di nozze:',
-      gift_iban: 'IBAN:',
-      gift_name: 'Intestato a:',
-      gift_reason: 'Causale:',
-      gift_reason_text: 'Regalo di nozze',
+      gift_title: "Lista Nozze",
+      gift_text:
+        "Il vostro affetto e la vostra presenza sono il regalo più grande. Se desiderate comunque farci un regalo, potete contribuire al nostro viaggio di nozze:",
+      gift_iban: "IBAN:",
+      gift_name: "Intestato a:",
+      gift_reason: "Causale:",
+      gift_reason_text: "Regalo di nozze",
 
       // RSVP section
-      rsvp_text: 'Vi preghiamo di confermare la vostra presenza entro il 13 Agosto 2025',
-      name_label: 'Nome e Cognome',
-      email_label: 'Email',
-      guests_label: 'Numero di persone',
-      dietary_label: 'Intolleranze o preferenze alimentari',
-      confirm_button: 'Conferma presenza',
-      confirmation_message: 'Grazie per aver confermato la tua presenza!'
+      rsvp_text:
+        "Vi preghiamo di confermare la vostra presenza entro il 13 Agosto 2025",
+      name_label: "Nome e Cognome",
+      email_label: "Email",
+      guests_label: "Numero di persone",
+      dietary_label: "Intolleranze o preferenze alimentari",
+      confirm_button: "Conferma presenza",
+      confirmation_message: "Grazie per aver confermato la tua presenza!",
     },
     en: {
       // Navigation
-      benvenuti: 'Welcome',
-      programma: 'Schedule',
-      location: 'Location',
-      regalo: 'Gift',
-      rsvp: 'RSVP',
-      contatti: 'Contacts',
+      benvenuti: "Welcome",
+      programma: "Schedule",
+      location: "Location",
+      regalo: "Gift",
+      rsvp: "RSVP",
+      contatti: "Contacts",
 
       // Welcome section
-      welcome_title: 'Welcome!',
-      welcome_text: 'Dear guests, welcome to our wedding website. We created this space to provide you with useful information and gather everyone\'s needs.',
+      welcome_title: "Welcome!",
+      welcome_text:
+        "Dear guests, welcome to our wedding website. We created this space to provide you with useful information and gather everyone's needs.",
 
       // Schedule section
-      schedule_title: 'Schedule of the Day',
-      arrival_time: '11:30 AM: Arrival',
-      arrival_text: 'We await you at Villa Lattuada in Casatenovo. Welcome aperitif and wine will be served.',
-      ceremony_time: '12:30 PM: Ceremony',
-      ceremony_text: 'The ceremony will be held in the villa\'s park.',
-      lunch_time: 'From 1:00 PM: Lunch',
-      lunch_text: 'We will enjoy lunch together, carefully prepared with attention to dietary requirements.',
-      cake_time: 'From 5:30 PM: Cake Cutting',
-      cake_text: 'We will celebrate together with the cake cutting and final greetings.',
+      schedule_title: "A Day Together",
+      arrival_time: "3:30 PM: Arrival",
+      arrival_text:
+        "We await you at Villa Lattuada in Casatenovo. You can park comfortably in the villa's parking area and enjoy the first moments in this beautiful venue.",
+      ceremony_time: "4:00 PM: Ceremony",
+      ceremony_text:
+        "The ceremony will be held in the villa's park, surrounded by nature and the greenery of the garden. An intimate and special moment to celebrate our love.",
+      aperitivo_time: "5:00 PM: Aperitif",
+      aperitivo_text:
+        "A rich aperitif and fine wine will welcome you. You can enjoy local specialties and toast with us in a convivial atmosphere.",
+      dinner_time: "7:00 PM: Dinner",
+      dinner_text:
+        "We will enjoy a refined dinner together, prepared with premium ingredients and special attention to dietary requirements and preferences of all guests. A moment of conviviality and fine dining.",
+      cake_time: "9:30 PM: Cake Cutting",
+      cake_text:
+        "We will celebrate together with the cake cutting, a special dessert carefully prepared for this important day. A sweet moment to celebrate our love.",
+      dance_time: "10:00 PM: Dancing",
+      dance_text:
+        "The party continues with music and dancing until late night. An opportunity to have fun together and create unforgettable memories of this special day.",
+      closing_time: "3:00 AM: Closing",
+      closing_text:
+        "We will conclude the celebrations with a final toast and farewells. Thank you for sharing this special day with us.",
 
       // Location section
-      directions_title: 'How to Get There',
-      directions_text: 'The villa is easily accessible by car. Ample parking available on site.',
-      maps_button: 'Open in Google Maps',
+      directions_title: "How to Get There",
+      directions_text:
+        "The villa is easily accessible by car. Ample parking available on site.",
+      maps_button: "Open in Google Maps",
 
       // Gift section
-      gift_title: 'Wedding Gift',
-      gift_text: 'Your love and presence are the greatest gift. However, if you wish to give us a present, you can contribute to our honeymoon:',
-      gift_iban: 'IBAN:',
-      gift_name: 'Account holder:',
-      gift_reason: 'Reference:',
-      gift_reason_text: 'Wedding gift',
+      gift_title: "Wedding Gift",
+      gift_text:
+        "Your love and presence are the greatest gift. However, if you wish to give us a present, you can contribute to our honeymoon:",
+      gift_iban: "IBAN:",
+      gift_name: "Account holder:",
+      gift_reason: "Reference:",
+      gift_reason_text: "Wedding gift",
 
       // RSVP section
-      rsvp_text: 'Please confirm your attendance by August 13, 2025',
-      name_label: 'Full Name',
-      email_label: 'Email',
-      guests_label: 'Number of guests',
-      dietary_label: 'Dietary requirements or preferences',
-      confirm_button: 'Confirm attendance',
-      confirmation_message: 'Thank you for confirming your attendance!'
-    }
+      rsvp_text: "Please confirm your attendance by August 13, 2025",
+      name_label: "Full Name",
+      email_label: "Email",
+      guests_label: "Number of guests",
+      dietary_label: "Dietary requirements or preferences",
+      confirm_button: "Confirm attendance",
+      confirmation_message: "Thank you for confirming your attendance!",
+    },
   };
 
   // Update navigation
-  document.querySelectorAll('nav a').forEach(link => {
-    const key = link.getAttribute('href').replace('#', '');
+  document.querySelectorAll("nav a").forEach((link) => {
+    const key = link.getAttribute("href").replace("#", "");
     if (translations[lang][key]) {
       link.textContent = translations[lang][key];
     }
   });
 
   // Update welcome section
-  document.querySelector('#benvenuti h2').textContent = translations[lang].welcome_title;
-  document.querySelector('#benvenuti p').textContent = translations[lang].welcome_text;
+  document.querySelector("#benvenuti h2").textContent =
+    translations[lang].welcome_title;
+  document.querySelector("#benvenuti p").textContent =
+    translations[lang].welcome_text;
 
   // Update schedule section
-  document.querySelector('#programma h2').textContent = translations[lang].schedule_title;
-  const events = document.querySelectorAll('.event');
-  events[0].querySelector('h3').textContent = translations[lang].arrival_time;
-  events[0].querySelector('p').textContent = translations[lang].arrival_text;
-  events[1].querySelector('h3').textContent = translations[lang].ceremony_time;
-  events[1].querySelector('p').textContent = translations[lang].ceremony_text;
-  events[2].querySelector('h3').textContent = translations[lang].lunch_time;
-  events[2].querySelector('p').textContent = translations[lang].lunch_text;
-  events[3].querySelector('h3').textContent = translations[lang].cake_time;
-  events[3].querySelector('p').textContent = translations[lang].cake_text;
+  document.querySelector("#programma h2").textContent =
+    translations[lang].schedule_title;
+  const events = document.querySelectorAll(".event");
+  events[0].querySelector("h3").textContent = translations[lang].arrival_time;
+  events[0].querySelector("p").textContent = translations[lang].arrival_text;
+  events[1].querySelector("h3").textContent = translations[lang].ceremony_time;
+  events[1].querySelector("p").textContent = translations[lang].ceremony_text;
+  events[2].querySelector("h3").textContent = translations[lang].aperitivo_time;
+  events[2].querySelector("p").textContent = translations[lang].aperitivo_text;
+  events[3].querySelector("h3").textContent = translations[lang].dinner_time;
+  events[3].querySelector("p").textContent = translations[lang].dinner_text;
+  events[4].querySelector("h3").textContent = translations[lang].cake_time;
+  events[4].querySelector("p").textContent = translations[lang].cake_text;
+  events[5].querySelector("h3").textContent = translations[lang].dance_time;
+  events[5].querySelector("p").textContent = translations[lang].dance_text;
+  events[6].querySelector("h3").textContent = translations[lang].closing_time;
+  events[6].querySelector("p").textContent = translations[lang].closing_text;
 
   // Update location section
-  document.querySelector('#location h2').textContent = translations[lang].location;
-  document.querySelector('.directions h4').textContent = translations[lang].directions_title;
-  document.querySelector('.directions p').textContent = translations[lang].directions_text;
-  document.querySelector('.directions .button').textContent = translations[lang].maps_button;
+  document.querySelector("#location h2").textContent =
+    translations[lang].location;
+  document.querySelector(".directions h4").textContent =
+    translations[lang].directions_title;
+  document.querySelector(".directions p").textContent =
+    translations[lang].directions_text;
+  document.querySelector(".directions .button").textContent =
+    translations[lang].maps_button;
 
   // Update gift section
-  document.querySelector('#regalo h2').textContent = translations[lang].gift_title;
-  document.querySelector('#regalo > p').textContent = translations[lang].gift_text;
-  document.querySelectorAll('.gift-info p').forEach(p => {
-    const strong = p.querySelector('strong');
+  document.querySelector("#regalo h2").textContent =
+    translations[lang].gift_title;
+  document.querySelector("#regalo > p").textContent =
+    translations[lang].gift_text;
+  document.querySelectorAll(".gift-info p").forEach((p) => {
+    const strong = p.querySelector("strong");
     if (strong) {
-      if (strong.textContent.includes('IBAN')) strong.textContent = translations[lang].gift_iban;
-      if (strong.textContent.includes('Intestato')) strong.textContent = translations[lang].gift_name;
-      if (strong.textContent.includes('Causale')) strong.textContent = translations[lang].gift_reason;
+      if (strong.textContent.includes("IBAN"))
+        strong.textContent = translations[lang].gift_iban;
+      if (strong.textContent.includes("Intestato"))
+        strong.textContent = translations[lang].gift_name;
+      if (strong.textContent.includes("Causale"))
+        strong.textContent = translations[lang].gift_reason;
     }
   });
 
   // Update RSVP section
-  document.querySelector('#rsvp h2').textContent = 'RSVP';
-  document.querySelector('#rsvp > p').textContent = translations[lang].rsvp_text;
-  document.querySelector('label[for="name"]').textContent = translations[lang].name_label;
-  document.querySelector('label[for="email"]').textContent = translations[lang].email_label;
-  document.querySelector('label[for="guests"]').textContent = translations[lang].guests_label;
-  document.querySelector('label[for="dietary"]').textContent = translations[lang].dietary_label;
-  document.querySelector('#rsvpForm button').textContent = translations[lang].confirm_button;
+  document.querySelector("#rsvp h2").textContent = "RSVP";
+  document.querySelector("#rsvp > p").textContent =
+    translations[lang].rsvp_text;
+  document.querySelector('label[for="name"]').textContent =
+    translations[lang].name_label;
+  document.querySelector('label[for="email"]').textContent =
+    translations[lang].email_label;
+  document.querySelector('label[for="guests"]').textContent =
+    translations[lang].guests_label;
+  document.querySelector('label[for="dietary"]').textContent =
+    translations[lang].dietary_label;
+  document.querySelector("#rsvpForm button").textContent =
+    translations[lang].confirm_button;
 
   // Update contacts section
-  document.querySelector('#contatti h2').textContent = translations[lang].contatti;
+  document.querySelector("#contatti h2").textContent =
+    translations[lang].contatti;
 
   // Update countdown message
   updateCountdown(lang);
@@ -295,32 +356,33 @@ function updateContent(lang) {
 
 // Add a function to reset language
 function resetLanguage() {
-  localStorage.removeItem('selectedLanguage');
+  localStorage.removeItem("selectedLanguage");
   window.location.reload();
 }
 
 // Add menu toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  
-  menuToggle.addEventListener('click', function() {
-    navLinks.classList.toggle('active');
-    
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+
     // Optional: Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const isClickInside = navLinks.contains(event.target) || menuToggle.contains(event.target);
-      if (!isClickInside && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
+    document.addEventListener("click", function (event) {
+      const isClickInside =
+        navLinks.contains(event.target) || menuToggle.contains(event.target);
+      if (!isClickInside && navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
       }
     });
   });
-  
+
   // Close menu when clicking a link
-  const links = document.querySelectorAll('.nav-links a');
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+  const links = document.querySelectorAll(".nav-links a");
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
     });
   });
-}); 
+});
