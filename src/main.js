@@ -161,20 +161,26 @@ function updateContent(lang) {
       // Schedule section
       schedule_title: "Una giornata insieme",
       arrival_time: "Ore 15:30: Arrivo",
-      arrival_text: "Vi aspettiamo a Villa Lattuada a Casatenovo.",
+      arrival_text:
+        "Vi aspettiamo a Villa Lattuada a Casatenovo. Potrete parcheggiare comodamente nel parcheggio della villa e godervi i primi momenti in questo splendido luogo.",
       ceremony_time: "Ore 16:00: Cerimonia",
-      ceremony_text: "La cerimonia si terrà nel parco della villa.",
+      ceremony_text:
+        "La cerimonia si terrà nel parco della villa, circondati dalla natura e dal verde del giardino. Un momento intimo e speciale per celebrare il nostro amore.",
       aperitivo_time: "Ore 17:00: Aperitivo",
-      aperitivo_text: "Un aperitivo e del buon vino vi faranno da benvenuto.",
+      aperitivo_text:
+        "Un aperitivo ricco e del buon vino vi faranno da benvenuto. Potrete gustare specialità locali e brindare insieme a noi in un'atmosfera conviviale.",
       dinner_time: "Ore 19:00: Cena",
       dinner_text:
-        "Gusteremo insieme una cena preparata con cura, con attenzione alle intolleranze e preferenze alimentari.",
+        "Gusteremo insieme una cena raffinata, preparata con ingredienti di prima qualità e con particolare attenzione alle intolleranze e preferenze alimentari di tutti gli ospiti. Un momento di convivialità e buona cucina.",
       cake_time: "Ore 21:30: Taglio torta",
-      cake_text: "Festeggeremo insieme con il taglio della torta.",
+      cake_text:
+        "Festeggeremo insieme con il taglio della torta, un dolce speciale preparato con cura per questo giorno importante. Un momento dolce per celebrare il nostro amore.",
       dance_time: "Ore 22:00: Balli",
-      dance_text: "Festa e balli fino a tarda notte.",
+      dance_text:
+        "La festa continua con musica e balli fino a tarda notte. Un'occasione per divertirsi insieme e creare ricordi indimenticabili di questa giornata speciale.",
       closing_time: "Ore 3:00: Chiusura",
-      closing_text: "Fine dei festeggiamenti.",
+      closing_text:
+        "Concluderemo i festeggiamenti con un ultimo brindisi e i saluti finali. Grazie per aver condiviso con noi questo giorno così speciale.",
 
       // Location section
       directions_title: "Come Arrivare",
@@ -218,20 +224,26 @@ function updateContent(lang) {
       // Schedule section
       schedule_title: "A Day Together",
       arrival_time: "3:30 PM: Arrival",
-      arrival_text: "We await you at Villa Lattuada in Casatenovo.",
+      arrival_text:
+        "We await you at Villa Lattuada in Casatenovo. You can park comfortably in the villa's parking area and enjoy the first moments in this beautiful venue.",
       ceremony_time: "4:00 PM: Ceremony",
-      ceremony_text: "The ceremony will be held in the villa's park.",
+      ceremony_text:
+        "The ceremony will be held in the villa's park, surrounded by nature and the greenery of the garden. An intimate and special moment to celebrate our love.",
       aperitivo_time: "5:00 PM: Aperitif",
-      aperitivo_text: "Welcome aperitif and wine will be served.",
+      aperitivo_text:
+        "A rich aperitif and fine wine will welcome you. You can enjoy local specialties and toast with us in a convivial atmosphere.",
       dinner_time: "7:00 PM: Dinner",
       dinner_text:
-        "We will enjoy dinner together, carefully prepared with attention to dietary requirements.",
+        "We will enjoy a refined dinner together, prepared with premium ingredients and special attention to dietary requirements and preferences of all guests. A moment of conviviality and fine dining.",
       cake_time: "9:30 PM: Cake Cutting",
-      cake_text: "We will celebrate together with the cake cutting.",
+      cake_text:
+        "We will celebrate together with the cake cutting, a special dessert carefully prepared for this important day. A sweet moment to celebrate our love.",
       dance_time: "10:00 PM: Dancing",
-      dance_text: "Party and dancing until late night.",
+      dance_text:
+        "The party continues with music and dancing until late night. An opportunity to have fun together and create unforgettable memories of this special day.",
       closing_time: "3:00 AM: Closing",
-      closing_text: "End of celebrations.",
+      closing_text:
+        "We will conclude the celebrations with a final toast and farewells. Thank you for sharing this special day with us.",
 
       // Location section
       directions_title: "How to Get There",
