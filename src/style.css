@@ -757,7 +757,7 @@ footer {
   max-width: 400px;
   height: auto;
   pointer-events: none;
-  z-index: 1;
+  z-index: -1;
 }
 
 /* Update mobile styles for leaves */
@@ -766,6 +766,7 @@ footer {
     width: 35vw;
     min-width: 200px;
     max-width: 280px;
+    z-index: -1;
   }
 
   .leaf-top-left {
@@ -807,13 +808,14 @@ footer {
 
   /* Update leaf sizes and positions */
   .leaf {
-    width: 55vw; /* Bigger than previous 40vw */
+    width: 55vw;
     min-width: 200px;
     max-width: 300px;
+    z-index: -1;
   }
 
   .leaf-top-left {
-    top: 0; /* Move to very top */
+    top: 0;
     left: -30px;
     transform: rotate(0deg);
   }
