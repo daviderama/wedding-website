@@ -883,29 +883,32 @@ p {
   margin: 0;
   padding: 0 0 1.5rem 0;
   position: relative;
-  color: var(--primary-color);
+}
+
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 1px;
+  background: var(--accent-color);
+  display: block;
 }
 
 .toggle-icon {
   position: absolute;
   right: 1rem;
-  top: 1.3rem;
   font-size: 1.2rem;
-  transition: all 0.3s ease;
-  line-height: 1;
-  color: var(--primary-color);
+  transition: transform 0.3s ease;
 }
 
 .toggle-icon::before {
-  content: "⌄";
+  content: "▾";
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.4rem;
   line-height: 1;
-}
-
-.section-header.active .toggle-icon {
-  transform: rotate(180deg);
-  top: 2.3rem;
 }
 
 .section-content {
@@ -917,6 +920,10 @@ p {
 
 .section-content.active {
   display: block;
+}
+
+.section-header.active .toggle-icon {
+  transform: rotate(180deg);
 }
 
 .section-content a {
