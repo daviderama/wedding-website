@@ -200,7 +200,7 @@ function updateContent(lang) {
 
       // RSVP section
       rsvp_text:
-        "Vi preghiamo di confermare la vostra presenza entro il 13 Agosto 2025",
+        "Vi preghiamo di confermare la vostra presenza entro il <strong>31 Luglio 2025</strong>.<br><br>Per permetterci di accogliervi al meglio, vi chiediamo gentilmente di segnalarci eventuali esigenze alimentari o intolleranze.",
       name_label: "Nome e Cognome",
       email_label: "Email",
       guests_label: "Numero di persone",
@@ -281,7 +281,8 @@ function updateContent(lang) {
       gift_reason_text: "Wedding gift",
 
       // RSVP section
-      rsvp_text: "Please confirm your attendance by August 13, 2025",
+      rsvp_text:
+        "Please confirm your attendance by <strong>July 31, 2025</strong>.<br><br>To help us accommodate you better, please let us know of any dietary requirements or restrictions.",
       name_label: "Full Name",
       email_label: "Email",
       guests_label: "Number of guests",
@@ -372,8 +373,7 @@ function updateContent(lang) {
 
   // Update RSVP section
   document.querySelector("#rsvp h2").textContent = "RSVP";
-  document.querySelector("#rsvp > p").textContent =
-    translations[lang].rsvp_text;
+  document.querySelector("#rsvp > p").innerHTML = translations[lang].rsvp_text;
   document.querySelector('label[for="name"]').textContent =
     translations[lang].name_label;
   document.querySelector('label[for="email"]').textContent =
