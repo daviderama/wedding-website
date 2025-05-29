@@ -877,12 +877,16 @@ p {
   padding: 1rem;
   transition: all 0.3s ease;
   position: relative;
+  gap: 1rem;
 }
 
 .section-header h2 {
   margin: 0;
   padding: 0 0 1.5rem 0;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .section-header h2::after {
@@ -897,20 +901,6 @@ p {
   display: block;
 }
 
-.toggle-icon {
-  position: absolute;
-  right: 1rem;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.toggle-icon::before {
-  content: "▾";
-  display: inline-block;
-  font-size: 1.4rem;
-  line-height: 1;
-}
-
 .section-content {
   display: none;
   padding: 1rem;
@@ -922,13 +912,10 @@ p {
   display: block;
 }
 
-.section-header.active .toggle-icon {
-  transform: rotate(180deg);
-}
-
 .section-content a {
   color: var(--primary-color);
-  text-decoration: none;
+  text-decoration: underline;
+  font-weight: bold;
   transition: opacity 0.3s ease;
 }
 

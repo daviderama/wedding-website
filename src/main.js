@@ -401,7 +401,11 @@ function updateContent(lang) {
     const navLink = document.querySelector('nav a[href="#dove-dormire"]');
 
     if (sectionTitle) {
-      sectionTitle.textContent = translations[lang].dove_dormire;
+      const isActive = accommodationSection
+        .querySelector(".section-header")
+        .classList.contains("active");
+      sectionTitle.textContent =
+        translations[lang].dove_dormire + (isActive ? " −" : " +");
     }
     if (navLink) {
       navLink.textContent = translations[lang].dove_dormire;
@@ -502,14 +506,18 @@ document.addEventListener("DOMContentLoaded", function () {
     header.addEventListener("click", function () {
       const content = this.nextElementSibling;
       const isActive = this.classList.contains("active");
+      const title = this.querySelector("h2");
+      const baseText = title.textContent.replace(/[+−]$/, "").trim();
 
       // Toggle active class on header
       this.classList.toggle("active");
 
-      // Toggle content visibility
+      // Update the text
       if (isActive) {
+        title.textContent = baseText + " +";
         content.classList.remove("active");
       } else {
+        title.textContent = baseText + " −";
         content.classList.add("active");
       }
     });
