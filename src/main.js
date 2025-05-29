@@ -152,6 +152,7 @@ function updateContent(lang) {
       regalo: "Regalo",
       rsvp: "RSVP",
       contatti: "Contatti",
+      dove_dormire: "Dove dormire",
 
       // Welcome section
       welcome_title: "Benvenuti!",
@@ -206,6 +207,24 @@ function updateContent(lang) {
       dietary_label: "Intolleranze o preferenze alimentari",
       confirm_button: "Conferma presenza",
       confirmation_message: "Grazie per aver confermato la tua presenza!",
+
+      // Accommodation section
+      accommodation_title: "Hotel Sant'Eustorgio",
+      accommodation_description:
+        "Per i nostri ospiti che vengono da fuori, abbiamo organizzato una sistemazione speciale presso",
+      accommodation_how_to_reach_title: "Come arrivare",
+      accommodation_how_to_reach_text:
+        "L'hotel si trova ad Arcore, facilmente raggiungibile in treno da tutti gli aeroporti di Milano.",
+      accommodation_rate_title: "Tariffa Agevolata",
+      accommodation_rate_text: "Disponibile per le notti del 12 e 13 settembre",
+      accommodation_transfer_title: "Transfer Organizzato",
+      accommodation_transfer_text:
+        "Il giorno del matrimonio, un servizio navetta vi porterà alla location e vi riaccompagnerà a fine serata",
+      accommodation_welcome_title: "Aperitivo di Benvenuto",
+      accommodation_welcome_text:
+        "Venerdì 12 settembre, un aperitivo di benvenuto per tutti gli ospiti che arrivano in anticipo",
+      accommodation_contact_note:
+        "Per prenotare e ricevere informazioni sulla tariffa speciale, contattateci direttamente",
     },
     en: {
       // Navigation
@@ -215,6 +234,7 @@ function updateContent(lang) {
       regalo: "Gift",
       rsvp: "RSVP",
       contatti: "Contacts",
+      dove_dormire: "Accommodation",
 
       // Welcome section
       welcome_title: "Welcome!",
@@ -229,9 +249,9 @@ function updateContent(lang) {
       ceremony_time: "4:00 PM: Ceremony",
       ceremony_text:
         "The ceremony will be held in the villa's park, surrounded by nature and the greenery of the garden. An intimate and special moment to celebrate our love.",
-      aperitivo_time: "5:00 PM: Aperitif",
+      aperitivo_time: "5:00 PM: Aperitivo",
       aperitivo_text:
-        "A rich aperitif and fine wine will welcome you. You can enjoy local specialties and toast with us in a convivial atmosphere.",
+        "A rich aperitivo and fine wine will welcome you. You can enjoy local specialties and toast with us in a convivial atmosphere.",
       dinner_time: "7:00 PM: Dinner",
       dinner_text:
         "We will enjoy a refined dinner together, prepared with premium ingredients and special attention to dietary requirements and preferences of all guests. A moment of conviviality and fine dining.",
@@ -268,6 +288,25 @@ function updateContent(lang) {
       dietary_label: "Dietary requirements or preferences",
       confirm_button: "Confirm attendance",
       confirmation_message: "Thank you for confirming your attendance!",
+
+      // Accommodation section
+      accommodation_title: "Hotel Sant'Eustorgio",
+      accommodation_description:
+        "For our guests coming from out of town, we have arranged special accommodation at",
+      accommodation_how_to_reach_title: "How to Get There",
+      accommodation_how_to_reach_text:
+        "The hotel is located in Arcore, easily accessible by train from all Milan airports.",
+      accommodation_rate_title: "Special Rate",
+      accommodation_rate_text:
+        "Available for the nights of September 12th and 13th",
+      accommodation_transfer_title: "Organized Transfer",
+      accommodation_transfer_text:
+        "On the wedding day, a shuttle service will take you to the venue and bring you back at the end of the evening",
+      accommodation_welcome_title: "Welcome Aperitivo",
+      accommodation_welcome_text:
+        "Friday, September 12th, a welcome aperitivo for all guests arriving early",
+      accommodation_contact_note:
+        "To book and receive information about the special rate, please contact us directly",
     },
   };
 
@@ -352,6 +391,78 @@ function updateContent(lang) {
 
   // Update countdown message
   updateCountdown(lang);
+
+  // Update accommodation section
+  const accommodationSection = document.querySelector("#dove-dormire");
+  if (accommodationSection) {
+    // Update section title in both the header and navigation
+    const sectionTitle =
+      accommodationSection.querySelector(".section-header h2");
+    const navLink = document.querySelector('nav a[href="#dove-dormire"]');
+
+    if (sectionTitle) {
+      const isActive = accommodationSection
+        .querySelector(".section-header")
+        .classList.contains("active");
+      sectionTitle.textContent =
+        translations[lang].dove_dormire + (isActive ? " −" : " +");
+    }
+    if (navLink) {
+      navLink.textContent = translations[lang].dove_dormire;
+    }
+
+    // Update hotel title
+    const hotelTitle = accommodationSection.querySelector(
+      ".accommodation-info h3"
+    );
+    if (hotelTitle) {
+      hotelTitle.textContent = translations[lang].accommodation_title;
+    }
+
+    // Update description
+    const description = accommodationSection.querySelector(
+      ".accommodation-description"
+    );
+    if (description) {
+      description.innerHTML =
+        translations[lang].accommodation_description +
+        ' <a href="https://maps.app.goo.gl/ycApxzt7aGGt59e4A" target="_blank"><strong>Hotel Sant\'Eustorgio di Arcore</strong></a>.';
+    }
+
+    // Update detail items
+    const detailItems = accommodationSection.querySelectorAll(".detail-item");
+    if (detailItems.length >= 4) {
+      // How to reach
+      detailItems[0].querySelector("h4").textContent =
+        translations[lang].accommodation_how_to_reach_title;
+      detailItems[0].querySelector("p").textContent =
+        translations[lang].accommodation_how_to_reach_text;
+
+      // Rate
+      detailItems[1].querySelector("h4").textContent =
+        translations[lang].accommodation_rate_title;
+      detailItems[1].querySelector("p").textContent =
+        translations[lang].accommodation_rate_text;
+
+      // Transfer
+      detailItems[2].querySelector("h4").textContent =
+        translations[lang].accommodation_transfer_title;
+      detailItems[2].querySelector("p").textContent =
+        translations[lang].accommodation_transfer_text;
+
+      // Welcome
+      detailItems[3].querySelector("h4").textContent =
+        translations[lang].accommodation_welcome_title;
+      detailItems[3].querySelector("p").textContent =
+        translations[lang].accommodation_welcome_text;
+    }
+
+    // Update contact note
+    const contactNote = accommodationSection.querySelector(".contact-note");
+    if (contactNote) {
+      contactNote.textContent = translations[lang].accommodation_contact_note;
+    }
+  }
 }
 
 // Add a function to reset language
@@ -383,6 +494,32 @@ document.addEventListener("DOMContentLoaded", function () {
   links.forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
+    });
+  });
+});
+
+// Handle collapsible sections
+document.addEventListener("DOMContentLoaded", function () {
+  const sectionHeaders = document.querySelectorAll(".section-header");
+
+  sectionHeaders.forEach((header) => {
+    header.addEventListener("click", function () {
+      const content = this.nextElementSibling;
+      const isActive = this.classList.contains("active");
+      const title = this.querySelector("h2");
+      const baseText = title.textContent.replace(/[+−]$/, "").trim();
+
+      // Toggle active class on header
+      this.classList.toggle("active");
+
+      // Update the text
+      if (isActive) {
+        title.textContent = baseText + " +";
+        content.classList.remove("active");
+      } else {
+        title.textContent = baseText + " −";
+        content.classList.add("active");
+      }
     });
   });
 });
