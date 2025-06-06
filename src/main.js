@@ -186,7 +186,7 @@ function updateContent(lang) {
       // Location section
       directions_title: "Come Arrivare",
       directions_text:
-        "La villa è facilmente raggiungibile in auto. Ampio parcheggio disponibile in loco.",
+        "La villa è facilmente raggiungibile in auto. Ampio parcheggio disponibile in loco. In caso di esaurimento posti, un ulteriore parcheggio è disponibile a pochi metri dalla villa.",
       maps_button: "Apri in Google Maps",
 
       // Gift section
@@ -268,7 +268,7 @@ function updateContent(lang) {
       // Location section
       directions_title: "How to Get There",
       directions_text:
-        "The villa is easily accessible by car. Ample parking available on site.",
+        "The villa is easily accessible by car. Ample parking available on site. In case the main parking is full, an additional parking area is available just a few meters away.",
       maps_button: "Open in Google Maps",
 
       // Gift section
