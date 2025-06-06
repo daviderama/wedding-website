@@ -147,8 +147,8 @@ function updateContent(lang) {
     it: {
       // Navigation
       benvenuti: "Benvenuti",
-      programma: "Programma",
       location: "Location",
+      programma: "Programma",
       regalo: "Regalo",
       rsvp: "RSVP",
       contatti: "Contatti",
@@ -229,8 +229,8 @@ function updateContent(lang) {
     en: {
       // Navigation
       benvenuti: "Welcome",
-      programma: "Schedule",
       location: "Location",
+      programma: "Schedule",
       regalo: "Gift",
       rsvp: "RSVP",
       contatti: "Contacts",
