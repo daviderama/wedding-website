@@ -157,7 +157,11 @@ function updateContent(lang) {
       // Welcome section
       welcome_title: "Benvenuti!",
       welcome_text:
-        "Care invitate e cari invitati, vi diamo il benvenuto in questa pagina. Abbiamo pensato di creare questo spazio per darvi alcune informazioni utili e raccogliere le esigenze di tutti.",
+        "Care invitate e cari invitati,<br>siamo emozionati di condividere con voi questo momento speciale.",
+      welcome_text_2:
+        "Abbiamo creato questo spazio per raccogliere tutti i dettagli della nostra giornata e per assicurarci che ognuno di voi si senta a proprio agio.",
+      welcome_text_3:
+        "Non vediamo l'ora di festeggiare insieme e creare nuovi ricordi indimenticabili!",
 
       // Schedule section
       schedule_title: "Una giornata insieme",
@@ -239,7 +243,9 @@ function updateContent(lang) {
       // Welcome section
       welcome_title: "Welcome!",
       welcome_text:
-        "Dear guests, welcome to our wedding website. We created this space to provide you with useful information and gather everyone's needs.",
+        "Dear guests, we are excited to share this special moment with you! Welcome to our wedding website.",
+      welcome_text_2:
+        "We created this space for you, to gather all the details of our day and to ensure that each of you feels comfortable. We can't wait to celebrate together and create unforgettable memories!",
 
       // Schedule section
       schedule_title: "A Day Together",
@@ -322,8 +328,10 @@ function updateContent(lang) {
   // Update welcome section
   document.querySelector("#benvenuti h2").textContent =
     translations[lang].welcome_title;
-  document.querySelector("#benvenuti p").textContent =
-    translations[lang].welcome_text;
+  const welcomeParagraphs = document.querySelectorAll("#benvenuti p");
+  welcomeParagraphs[0].innerHTML = translations[lang].welcome_text;
+  welcomeParagraphs[1].textContent = translations[lang].welcome_text_2;
+  welcomeParagraphs[2].textContent = translations[lang].welcome_text_3;
 
   // Update schedule section
   document.querySelector("#programma h2").textContent =
