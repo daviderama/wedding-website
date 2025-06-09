@@ -847,6 +847,7 @@ p {
   margin-left: auto;
   margin-right: auto;
   max-width: 800px; /* Optional: to prevent very wide paragraphs */
+  font-size: 1.2rem;
 }
 
 /* Add space before map button */
@@ -949,7 +950,7 @@ p {
 .accommodation-description {
   text-align: center;
   margin-bottom: 3rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.8;
 }
 
@@ -981,7 +982,7 @@ p {
 }
 
 .detail-item p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin: 0;
 }
