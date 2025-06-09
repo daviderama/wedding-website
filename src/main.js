@@ -167,23 +167,23 @@ function updateContent(lang) {
       schedule_title: "Una giornata insieme",
       arrival_time: "Ore 15:30: Arrivo",
       arrival_text:
-        "Vi aspettiamo a Villa Lattuada a Casatenovo. Parcheggio disponibile in loco.",
+        "Vi aspettiamo a Villa Lattuada a Casatenovo per iniziare la giornata immersi nei paesaggi della nostra Brianza.",
       ceremony_time: "Ore 16:00: Cerimonia",
       ceremony_text:
-        "La cerimonia si terrà nel parco della villa. Un momento intimo circondati dalla natura.",
+        "Ci accompagnerete in questo momento importante insieme ai nostri testimoni Lucia, Melania, Xavi, Luca e Alessio.",
       aperitivo_time: "Ore 17:00: Aperitivo",
       aperitivo_text:
-        "Aperitivo con specialità locali e buon vino. Un momento conviviale per brindare insieme.",
+        "Brindiamo insieme al nostro nuovo inizio accompagnati da specialità locali e dal buon vino.",
       dinner_time: "Ore 19:00: Cena",
       dinner_text:
-        "Cena raffinata con ingredienti di prima qualità. Particolare attenzione alle intolleranze alimentari.",
+        "Un menu speciale che celebra le tradizioni culinarie delle nostre terre d'origine, dal Nord al Sud Italia.",
       cake_time: "Ore 21:30: Taglio torta",
       cake_text:
-        "Taglio della torta nuziale. Un dolce momento per celebrare insieme.",
-      dance_time: "Ore 22:00: Balli",
+        "Il momento più dolce della serata: festeggiamo insieme il nostro amore con il simbolico taglio della torta.",
+      dance_time: "Ore 22:00: Festa!",
       dance_text:
-        "Musica e balli fino a tarda notte. Un'occasione per divertirsi insieme.",
-      closing_time: "Ore 3:00: Chiusura",
+        "Musica e divertimento con i nostri amici musicisti e DJ, per ballare e festeggiare insieme fino a tardi.",
+      closing_time: "Ore 3:00: Saluti",
       closing_text:
         "Ultimo brindisi e saluti finali. Grazie per aver condiviso con noi questo giorno speciale.",
 
@@ -194,13 +194,14 @@ function updateContent(lang) {
       maps_button: "Apri in Google Maps",
 
       // Gift section
-      gift_title: "Lista Nozze",
+      gift_title: "Regalo",
       gift_text:
-        "Il vostro affetto e la vostra presenza sono il regalo più grande. Se desiderate comunque farci un regalo, potete contribuire al nostro viaggio di nozze:",
+        "La vostra presenza e il vostro affetto saranno per noi il regalo il più bello. Se desiderate comunque farci un regalo, potete contribuire al nostro viaggio di nozze in California e Aruba:",
       gift_iban: "IBAN:",
       gift_name: "Intestato a:",
       gift_reason: "Causale:",
       gift_reason_text: "Regalo di nozze",
+      gift_account_holder: "Davide Ramaglietta e Francesca Biffi",
 
       // RSVP section
       rsvp_text:
@@ -253,23 +254,23 @@ function updateContent(lang) {
       schedule_title: "A Day Together",
       arrival_time: "3:30 PM: Arrival",
       arrival_text:
-        "We await you at Villa Lattuada in Casatenovo. Parking available on site.",
+        "We await you at Villa Lattuada in Casatenovo to begin the day surrounded by the landscapes of our Brianza.",
       ceremony_time: "4:00 PM: Ceremony",
       ceremony_text:
-        "The ceremony will be held in the villa's park. An intimate moment surrounded by nature.",
+        "You will join us in this important moment together with our wedding witnesses Lucia, Melania, Xavier and Luca.",
       aperitivo_time: "5:00 PM: Aperitivo",
       aperitivo_text:
-        "Aperitivo with local specialties and fine wine. A convivial moment to toast together.",
+        "Let's toast together to our new beginning, with local specialties and fine wine.",
       dinner_time: "7:00 PM: Dinner",
       dinner_text:
-        "Refined dinner with premium ingredients. Special attention to dietary requirements.",
+        "A special menu celebrating the culinary traditions of our homelands, from Northern to Southern Italy.",
       cake_time: "9:30 PM: Cake Cutting",
       cake_text:
-        "Wedding cake cutting ceremony. A sweet moment to celebrate together.",
-      dance_time: "10:00 PM: Dancing",
+        "The sweetest moment of the evening: let's celebrate our love together with the symbolic cake cutting.",
+      dance_time: "10:00 PM: Party!",
       dance_text:
-        "Music and dancing until late night. An opportunity to have fun together.",
-      closing_time: "3:00 AM: Closing",
+        "Music and entertainment with our musician friends and DJ, to dance and celebrate together until late.",
+      closing_time: "3:00 AM: Farewell",
       closing_text:
         "Final toast and farewells. Thank you for sharing this special day with us.",
 
@@ -280,13 +281,14 @@ function updateContent(lang) {
       maps_button: "Open in Google Maps",
 
       // Gift section
-      gift_title: "Wedding Gift",
+      gift_title: "Gift",
       gift_text:
-        "Your love and presence are the greatest gift. However, if you wish to give us a present, you can contribute to our honeymoon:",
+        "Your presence and affection will be the most beautiful gift for us. If you still wish to give us a present, you can contribute to our honeymoon in California and Aruba:",
       gift_iban: "IBAN:",
       gift_name: "Account holder:",
       gift_reason: "Reference:",
       gift_reason_text: "Wedding gift",
+      gift_account_holder: "Davide Ramaglietta and Francesca Biffi",
 
       // RSVP section
       rsvp_text:
