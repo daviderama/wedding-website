@@ -152,7 +152,7 @@ function updateContent(lang) {
       regalo: "Regalo",
       rsvp: "RSVP",
       contatti: "Contatti",
-      dove_dormire: "Dove dormire",
+      dove_dormire: "Se vieni da fuori",
 
       // Welcome section
       welcome_title: "Benvenuti!",
@@ -239,7 +239,7 @@ function updateContent(lang) {
       regalo: "Gift",
       rsvp: "RSVP",
       contatti: "Contacts",
-      dove_dormire: "Accommodation",
+      dove_dormire: "If you're coming from out of town",
 
       // Welcome section
       welcome_title: "Welcome!",

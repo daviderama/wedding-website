@@ -1023,3 +1023,13 @@ p {
 .italic {
   font-style: italic;
 }
+
+.hotel-link {
+  font-size: 1.8rem;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.hotel-link strong {
+  font-weight: 500;
+}
