@@ -243,9 +243,11 @@ function updateContent(lang) {
       // Welcome section
       welcome_title: "Welcome!",
       welcome_text:
-        "Dear guests, we are excited to share this special moment with you! Welcome to our wedding website.",
+        "Dear guests,<br>we are excited to share this special moment with you.",
       welcome_text_2:
-        "We created this space for you, to gather all the details of our day and to ensure that each of you feels comfortable. We can't wait to celebrate together and create unforgettable memories!",
+        "We created this space to gather all the details of our day and to ensure that each of you feels comfortable.",
+      welcome_text_3:
+        "We can't wait to celebrate together and create unforgettable memories!",
 
       // Schedule section
       schedule_title: "A Day Together",
