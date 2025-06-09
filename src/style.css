@@ -1019,3 +1019,7 @@ p {
   color: var(--text-color) !important;
   pointer-events: none;
 }
+
+.italic {
+  font-style: italic;
+}

@@ -205,7 +205,7 @@ function updateContent(lang) {
 
       // RSVP section
       rsvp_text:
-        "Vi preghiamo di confermare la vostra presenza entro il <strong>31 Luglio 2025</strong>.<br><br>Per permetterci di accogliervi al meglio, vi chiediamo gentilmente di segnalarci eventuali esigenze alimentari o intolleranze.",
+        "<em>Vi preghiamo di confermare la vostra presenza entro il <strong>31 luglio 2025</strong>.<br><br>Per permetterci di accogliervi al meglio, vi chiediamo gentilmente di segnalarci eventuali esigenze alimentari o intolleranze.</em>",
       name_label: "Nome e Cognome",
       email_label: "Email",
       guests_label: "Numero di persone",
@@ -292,7 +292,7 @@ function updateContent(lang) {
 
       // RSVP section
       rsvp_text:
-        "Please confirm your attendance by <strong>July 31, 2025</strong>.<br><br>To help us accommodate you better, please let us know of any dietary requirements or restrictions.",
+        "<em>Please confirm your attendance by <strong>July 31, 2025</strong>.<br><br>To help us accommodate you better, please let us know of any dietary requirements or restrictions.</em>",
       name_label: "Full Name",
       email_label: "Email",
       guests_label: "Number of guests",
