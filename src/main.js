@@ -221,15 +221,14 @@ function updateContent(lang) {
       accommodation_how_to_reach_text:
         "L'hotel si trova ad Arcore, facilmente raggiungibile in treno da tutti gli aeroporti di Milano.",
       accommodation_rate_title: "Tariffa Agevolata",
-      accommodation_rate_text: "Disponibile per le notti del 12 e 13 settembre",
+      accommodation_rate_text:
+        "Disponibile per le notti del 12 e 13 settembre. Per prenotazioni e dettagli sulla tariffa riservata, contattateci direttamente.",
       accommodation_transfer_title: "Transfer Organizzato",
       accommodation_transfer_text:
-        "Il giorno del matrimonio, un servizio navetta vi porterà alla location e vi riaccompagnerà a fine serata",
+        "Il giorno del matrimonio, un servizio navetta vi porterà alla location e vi riaccompagnerà a fine serata.",
       accommodation_welcome_title: "Aperitivo di Benvenuto",
       accommodation_welcome_text:
-        "Venerdì 12 settembre, un aperitivo di benvenuto per tutti gli ospiti che arrivano in anticipo",
-      accommodation_contact_note:
-        "Per prenotare e ricevere informazioni sulla tariffa speciale, contattateci direttamente",
+        "Venerdì 12 settembre, un aperitivo di benvenuto per tutti gli ospiti che arrivano in anticipo.",
     },
     en: {
       // Navigation
@@ -239,7 +238,7 @@ function updateContent(lang) {
       regalo: "Gift",
       rsvp: "RSVP",
       contatti: "Contacts",
-      dove_dormire: "If you're coming from out of town",
+      dove_dormire: "Traveling guests",
 
       // Welcome section
       welcome_title: "Welcome!",
@@ -309,15 +308,13 @@ function updateContent(lang) {
         "The hotel is located in Arcore, easily accessible by train from all Milan airports.",
       accommodation_rate_title: "Special Rate",
       accommodation_rate_text:
-        "Available for the nights of September 12th and 13th",
+        "Available for the nights of September 12th and 13th. For booking and special rate details, please contact us.",
       accommodation_transfer_title: "Organized Transfer",
       accommodation_transfer_text:
-        "On the wedding day, a shuttle service will take you to the venue and bring you back at the end of the evening",
+        "On the wedding day, a shuttle service will take you to the venue and bring you back at the end of the evening.",
       accommodation_welcome_title: "Welcome Aperitivo",
       accommodation_welcome_text:
-        "Friday, September 12th, a welcome aperitivo for all guests arriving early",
-      accommodation_contact_note:
-        "To book and receive information about the special rate, please contact us directly",
+        "Friday, September 12th, a welcome aperitivo for all guests arriving early.",
     },
   };
 
@@ -386,16 +383,6 @@ function updateContent(lang) {
   // Update RSVP section
   document.querySelector("#rsvp h2").textContent = "RSVP";
   document.querySelector("#rsvp > p").innerHTML = translations[lang].rsvp_text;
-  document.querySelector('label[for="name"]').textContent =
-    translations[lang].name_label;
-  document.querySelector('label[for="email"]').textContent =
-    translations[lang].email_label;
-  document.querySelector('label[for="guests"]').textContent =
-    translations[lang].guests_label;
-  document.querySelector('label[for="dietary"]').textContent =
-    translations[lang].dietary_label;
-  document.querySelector("#rsvpForm button").textContent =
-    translations[lang].confirm_button;
 
   // Update contacts section
   document.querySelector("#contatti h2").textContent =
