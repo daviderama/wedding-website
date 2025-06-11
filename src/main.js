@@ -425,7 +425,7 @@ function updateContent(lang) {
     if (description) {
       description.innerHTML =
         translations[lang].accommodation_description +
-        ' <a href="https://maps.app.goo.gl/ycApxzt7aGGt59e4A" target="_blank"><strong>Hotel Sant\'Eustorgio di Arcore</strong></a>.';
+        '</br><a href="https://maps.app.goo.gl/ycApxzt7aGGt59e4A" target="_blank" style="font-size: 1.4em"><strong>Hotel Sant\'Eustorgio</strong></a>';
     }
 
     // Update detail items
