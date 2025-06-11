@@ -177,10 +177,10 @@ function updateContent(lang) {
       dinner_time: "Ore 19:00: Cena",
       dinner_text:
         "Un menu speciale che celebra le tradizioni culinarie delle nostre terre d'origine, dal Nord al Sud Italia.",
-      cake_time: "Ore 21:30: Taglio torta",
+      cake_time: "Ore 21:30: Torta",
       cake_text:
         "Il momento più dolce della serata: festeggiamo insieme il nostro amore con il simbolico taglio della torta.",
-      dance_time: "Ore 22:00: Festa!",
+      dance_time: "Ore 22:00: Festa",
       dance_text:
         "Musica e divertimento con i nostri amici musicisti e DJ, per ballare e festeggiare insieme fino a tardi.",
       closing_time: "Ore 3:00: Saluti",
@@ -264,10 +264,10 @@ function updateContent(lang) {
       dinner_time: "7:00 PM: Dinner",
       dinner_text:
         "A special menu celebrating the culinary traditions of our homelands, from Northern to Southern Italy.",
-      cake_time: "9:30 PM: Cake Cutting",
+      cake_time: "9:30 PM: Cake",
       cake_text:
         "The sweetest moment of the evening: let's celebrate our love together with the symbolic cake cutting.",
-      dance_time: "10:00 PM: Party!",
+      dance_time: "10:00 PM: Party",
       dance_text:
         "Music and entertainment with our musician friends and DJ, to dance and celebrate together until late.",
       closing_time: "3:00 AM: Farewell",
