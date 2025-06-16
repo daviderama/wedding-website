@@ -256,7 +256,7 @@ function updateContent(lang) {
         "We await you at Villa Lattuada in Casatenovo to begin the day surrounded by the landscapes of our Brianza.",
       ceremony_time: "4:00 PM: Ceremony",
       ceremony_text:
-        "You will join us in this important moment together with our wedding witnesses Lucia, Melania, Xavier and Luca.",
+        "You will join us in this important moment together with our wedding witnesses Lucia, Melania, Xavi, Luca, and Alessio.",
       aperitivo_time: "5:00 PM: Aperitivo",
       aperitivo_text:
         "Let's toast together to our new beginning, with local specialties and fine wine.",
